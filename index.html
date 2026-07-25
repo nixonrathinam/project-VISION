@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vision Properties — Site Assistant</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#152238;
+    --ink-soft:#1F3350;
+    --gold:#C79A3E;
+    --gold-soft:#E4C578;
+    --terracotta:#B15A34;
+    --paper:#EEF2F4;
+    --paper-deep:#E3E9EC;
+    --card:#FFFFFF;
+    --text:#1B2430;
+    --text-soft:#5B6675;
+    --success:#4C7A5A;
+    --radius:16px;
+    --shadow: 0 18px 40px -12px rgba(21,34,56,0.35);
+    --header-bg: rgba(238,242,244,0.92);
+    --border: rgba(21,34,56,0.08);
+    --border-strong: rgba(21,34,56,0.15);
+    --grid-line: rgba(21,34,56,0.05);
+  }
+  html.dark{
+    --ink:#E8EEF5;
+    --ink-soft:#C5D0DE;
+    --gold:#D4AE55;
+    --gold-soft:#E4C578;
+    --terracotta:#E07A4F;
+    --paper:#0F1724;
+    --paper-deep:#162032;
+    --card:#1A2536;
+    --text:#E2E8F0;
+    --text-soft:#94A3B8;
+    --success:#6BBF80;
+    --shadow: 0 18px 40px -12px rgba(0,0,0,0.55);
+    --header-bg: rgba(15,23,36,0.92);
+    --border: rgba(255,255,255,0.08);
+    --border-strong: rgba(255,255,255,0.14);
+    --grid-line: rgba(255,255,255,0.04);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  html,body{
+    height:100%;
+    margin:0;
+    background:transparent;
+    font-family:'Inter',sans-serif;
+    color:var(--text);
+  }
+
+  .site-shell{
+    min-height:100vh;
+    background:
+      radial-gradient(ellipse 80% 50% at 10% -10%, rgba(199,154,62,0.14), transparent 55%),
+      radial-gradient(ellipse 60% 40% at 90% 20%, rgba(177,90,52,0.06), transparent 50%),
+      var(--paper);
+    position:relative;
+    overflow-x:hidden;
+  }
+  html.dark .site-shell{
+    background:
+      radial-gradient(ellipse 80% 50% at 10% -10%, rgba(212,174,85,0.08), transparent 55%),
+      radial-gradient(ellipse 60% 40% at 90% 20%, rgba(224,122,79,0.05), transparent 50%),
+      var(--paper);
+  }
+  .site-header{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 6vw;
+    position:sticky;top:0;z-index:30;
+    background:var(--header-bg);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--border);
+  }
+  .theme-toggle{
+    width:38px;height:38px;border-radius:10px;border:1px solid var(--border-strong);
+    background:var(--card);color:var(--ink);cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    transition:all .15s;flex-shrink:0;
+  }
+  .theme-toggle:hover{border-color:var(--gold);}
+  .theme-toggle svg{width:18px;height:18px;}
+  .theme-toggle .icon-moon{display:none;}
+  html.dark .theme-toggle .icon-sun{display:none;}
+  html.dark .theme-toggle .icon-moon{display:block;}
+  .header-actions{display:flex;align-items:center;gap:10px;}
+  .brand{
+    display:flex;align-items:center;gap:12px;
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:20px;
+    color:var(--ink);
+    text-decoration:none;
+  }
+  .brand-mark{
+    width:38px;height:38px;border-radius:9px;
+    background:#152238;
+    display:flex;align-items:center;justify-content:center;
+  }
+  html.dark .brand-mark{background:#0B1220;}
+  .brand-mark svg{width:20px;height:20px;}
+  .site-nav{display:flex;gap:28px;font-size:14px;color:var(--text-soft);font-weight:500;}
+  .site-nav a{
+    color:var(--text-soft);text-decoration:none;cursor:pointer;
+    transition:color .15s;
+  }
+  .site-nav a:hover{color:var(--ink);}...

@@ -245,6 +245,16 @@
     background:var(--card);border-radius:16px;padding:28px;
     box-shadow:var(--shadow);border:1px solid var(--border);
   }
+  .form-card.visme-wrap{
+    padding:0;
+    overflow:hidden;
+    min-height:500px;
+    height:auto;
+  }
+  .form-card.visme-wrap .visme_d{
+    width:100%;
+    min-height:500px;
+  }
   .form-row{margin-bottom:16px;}
   .form-row label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--ink);}
   .form-row input,.form-row select,.form-row textarea{
@@ -433,7 +443,9 @@
     .p-card-img{height:200px;}
     .loc-grid{grid-template-columns:repeat(2,1fr);gap:10px;}
     .loc-chip{padding:14px 10px;font-size:13px;}
-    .form-card{padding:20px;}
+    .form-card:not(.visme-wrap){padding:20px;}
+    .form-card.visme-wrap{min-height:480px;}
+    .form-card.visme-wrap .visme_d{min-height:480px;}
     .modal{max-height:92vh;}
     .modal-hero{height:200px;}
     .modal-body{padding:20px;}
@@ -581,41 +593,9 @@
           <div class="contact-row"><b>Trichy Office</b>Vision Tower, Ashok Nagar West, Karumandabam, Trichy - 620001</div>
           <div class="contact-row"><b>Website</b>visionproperties.co</div>
         </div>
-        <div class="form-card">
-          <form id="contactForm" onsubmit="return submitContact(event)">
-            <div class="form-row">
-              <label>Full Name *</label>
-              <input type="text" name="name" required placeholder="Your name">
-            </div>
-            <div class="form-row">
-              <label>Phone *</label>
-              <input type="tel" name="phone" required placeholder="+91 XXXXX XXXXX">
-            </div>
-            <div class="form-row">
-              <label>Email</label>
-              <input type="email" name="email" placeholder="you@email.com">
-            </div>
-            <div class="form-row">
-              <label>Interested Location</label>
-              <select name="location">
-                <option value="">Select location</option>
-                <option>Chennai</option>
-                <option>Trichy</option>
-                <option>Panjappur</option>
-                <option>Fathima Nagar</option>
-                <option>Kathaloor</option>
-                <option>Wireless Road</option>
-                <option>Boodhakudi</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="form-row">
-              <label>Message</label>
-              <textarea name="message" placeholder="Tell us about your requirements..."></textarea>
-            </div>
-            <button type="submit" class="form-submit">Send Enquiry →</button>
-            <div class="form-success" id="formSuccess">Thank you! Our team will contact you shortly.</div>
-          </form>
+        <div class="form-card visme-wrap">
+          <div class="visme_d" data-title="Simple Animated Contact Form" data-url="33pxnnve-simple-animated-contact-form" data-domain="forms" data-full-page="false" data-min-height="500px" data-form-id="192309"></div>
+          <script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>
         </div>
       </div>
     </div>
@@ -895,17 +875,6 @@ function closeModal(){
   document.body.style.overflow = '';
 }
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
-
-/* ========== CONTACT FORM ========== */
-function submitContact(e){
-  e.preventDefault();
-  const form = document.getElementById('contactForm');
-  const success = document.getElementById('formSuccess');
-  success.style.display = 'block';
-  form.reset();
-  setTimeout(() => { success.style.display = 'none'; }, 4000);
-  return false;
-}
 
 /* ========== CHAT ASSISTANT ========== */
 const DATA = {
